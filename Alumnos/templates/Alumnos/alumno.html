@@ -1,11 +1,13 @@
 {% extends "Alumnos/master.html" %}
 {% block content %}
 
+    <div align="center">
     <h1>Detalles alumno: {{ alumno.nombre }}</h1>
         
     <hr>
 
     <h2>email: {{ alumno.email }}</h2>
     <h2>Asignado a: {{ alumno.proyecto }}</h2>
+    </div>
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.urls import reverse
+from django.contrib.auth import logout
+from django.shortcuts import redirect, render
 from .models import Alumno
 # Create your views here.
 
@@ -18,3 +18,7 @@ def alumno(request, alumno_id):
                     'alumno':alumno,
                 }
     return render(request, 'Alumnos/alumno.html', variables)
+
+def log_out(request):
+    logout(request)
+    return redirect('Alumnos:index')
